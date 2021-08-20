@@ -32,30 +32,64 @@ console.log("I did it")
 
 //////////////////
 
+
+let globalLettersArray =[];
+let picsArray = ['spaceship/0.jpg', 'spaceship/1.jpg', 'spaceship/1.jpg', 'spaceship/2.jpg', 'spaceship/3.jpg', 'spaceship/4.jpg', 'spaceship/5.jpg', 'spaceship/6.jpg', 'spaceship/7.jpg', 'spaceship/8.jpg', 'spaceship/9.jpg', 'spaceship/10.jpg', 'spaceship/11.jpg', 'spaceship/12.jpg', 'spaceship/13.jpg', 'spaceship/14.jpg', 'spaceship/15.jpg', 'spaceship/16.jpg', 'spaceship/17.jpg', ]
+let img = document.createElement('img');
+document.querySelector("body > div:nth-child(2) > div.spaceship").append(img);
+img.src = 'spaceship/empty.jpg';
+
 const appendFuction = () => {
-
 let enteredWord = document.getElementById("input-box").value;
-console.log(enteredWord);
-let lettersArray =enteredWord.split('');
-// lettersArray.push(newWord.split(''));
-console.log(lettersArray);
-console.log(lettersArray.length);
+// console.log(enteredWord);
+let lettersArray = enteredWord.split('');
+globalLettersArray.push(lettersArray);
+// console.log(lettersArray);
+// console.log(lettersArray.length);
+ 
 
-for (let i = 0; i< lettersArray.length; i++) {
-    let box = document.createElement('div');
-    document.querySelector('.boxes').append(box);
-    box.innerText = lettersArray[i];
-    // console.log(box);
+    for (let i = 0; i< lettersArray.length; i++) {
+        let box = document.createElement('div');
+        document.querySelector('.boxes').append(box);
+        box.setAttribute('id', 'secret-letter');
+        box.innerText = lettersArray[i];
+        // console.log(box);
+    }
+    console.log('global Array', globalLettersArray);
+
+
+
+
+
 }
 
 
 
-}
 let enterButton = document.querySelector("body > div.first-container > div > form > button");
-console.log(enterButton);
 enterButton.onclick = appendFuction;
 
+////////////////
+// once p1 enters the word container 1 will disappear and form 2 will appear
+let checkButton = document.querySelector("body > div:nth-child(2) > div.p2-input > form > button");
+let enteredLetter = document.getElementById("p2-input-box").value;
+console.log(enteredLetter);
 
+
+// const addPic = () => {
+
+// }
+let checkingFunction = () => {
+    if ( globalLettersArray.includes(enteredLetter)){
+        document.querySellector('#secret-letter').style.visibility = visible;
+    } else {
+        let spaceshipImg = documetnt.createElement('img');
+        let mistakesCounter = 1;
+        spaceshipImg.src = 'spaceship/' + mistakesCounter +'.jpg'
+        document.querySelector("body > div:nth-child(2) > div.spaceship").append(img);
+        mistakesCounter ++;
+    }
+}
+checkButton.onclick = checkingFunction;
 
 
 
