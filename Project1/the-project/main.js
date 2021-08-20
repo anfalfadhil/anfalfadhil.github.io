@@ -27,3 +27,38 @@ console.log("I did it")
 
 // at the the scores will pop up and a message with the result
 // and every thing will be empty for the next round
+
+
+
+//////////////////
+
+const appendFuction = () => {
+
+let enteredWord = document.getElementById("input-box").value;
+console.log(enteredWord);
+let lettersArray =enteredWord.split('');
+// lettersArray.push(newWord.split(''));
+console.log(lettersArray);
+
+for (let i = 0; i< lettersArray.length; i++) {
+    let box = document.createElement('div');
+    document.querySelector('.boxes').append(box);
+    box.innerText = lettersArray[i];
+    console.logl(box);
+}
+
+
+
+}
+let enterButton = document.querySelector("body > div.first-container > div > form > button");
+console.log(enterButton);
+enterButton.onclick = appendFuction;
+
+
+
+
+
+
+
+
+
