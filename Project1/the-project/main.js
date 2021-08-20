@@ -39,12 +39,13 @@ console.log(enteredWord);
 let lettersArray =enteredWord.split('');
 // lettersArray.push(newWord.split(''));
 console.log(lettersArray);
+console.log(lettersArray.length);
 
 for (let i = 0; i< lettersArray.length; i++) {
     let box = document.createElement('div');
     document.querySelector('.boxes').append(box);
     box.innerText = lettersArray[i];
-    console.logl(box);
+    // console.log(box);
 }
 
 
