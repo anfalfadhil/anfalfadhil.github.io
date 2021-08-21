@@ -44,10 +44,9 @@ let enteredWord = document.getElementById("input-box").value;
 // console.log(enteredWord);
 let lettersArray = enteredWord.split('');
 globalLettersArray.push(lettersArray);
+document.querySelector("body > div.first-container").style.visibility = "hidden";
 // console.log(lettersArray);
 // console.log(lettersArray.length);
- 
-
     for (let i = 0; i< lettersArray.length; i++) {
         let box = document.createElement('div');
         document.querySelector('.boxes').append(box);
@@ -55,15 +54,8 @@ globalLettersArray.push(lettersArray);
         box.innerText = lettersArray[i];
         // console.log(box);
     }
-    console.log('global Array', globalLettersArray);
-
-
-
-
-
 }
-
-
+//  console.log('global Array = ', globalLettersArray);
 
 let enterButton = document.querySelector("body > div.first-container > div > form > button");
 enterButton.onclick = appendFuction;
@@ -71,23 +63,27 @@ enterButton.onclick = appendFuction;
 ////////////////
 // once p1 enters the word container 1 will disappear and form 2 will appear
 let checkButton = document.querySelector("body > div:nth-child(2) > div.p2-input > form > button");
-let enteredLetter = document.getElementById("p2-input-box").value;
-console.log(enteredLetter);
+// document.getElementById("p2-input-box").value;
 
 
-// const addPic = () => {
+const addPic = () => {
 
-// }
+}
+let mistakesCounter = 0;
 let checkingFunction = () => {
-    if ( globalLettersArray.includes(enteredLetter)){
-        document.querySellector('#secret-letter').style.visibility = visible;
-    } else {
-        let spaceshipImg = documetnt.createElement('img');
-        let mistakesCounter = 1;
-        spaceshipImg.src = 'spaceship/' + mistakesCounter +'.jpg'
-        document.querySelector("body > div:nth-child(2) > div.spaceship").append(img);
-        mistakesCounter ++;
-    }
+    let enteredLetter =  document.querySelector("#p2-input-box").value;
+    // console.log(enteredLetter);
+            console.log(globalLettersArray);
+            console.log(enteredLetter);
+        if (globalLettersArray.includes(enteredLetter)){
+            // globalLettersArray.indexOf(enteredLetter)
+            // document.querySellector('#secret-letter').style.visibility = visible;
+            console.log('match');
+        } else {
+            img.src = 'spaceship/' + mistakesCounter +'.jpg'
+            mistakesCounter ++; 
+            
+        }
 }
 checkButton.onclick = checkingFunction;
 
