@@ -1,5 +1,7 @@
 body {
-    background-color: rgb(245, 198, 245);
+    background-color: rgb(248, 228, 248);
+    display: flex;
+    
 }
 
 .password-field{
@@ -14,7 +16,7 @@ body {
     display: flex;
     font-size: xx-large;
     border-radius: 20px;
-    border: 2px solid #4CAF50;
+    border: 2px solid #313eee;
 
  }
  @keyframes happy {
@@ -28,14 +30,14 @@ body {
      display: flex;
      justify-content: center;
      align-items: flex-end;
-     background-color: rgb(41, 9, 94);
+     background-color: rgb(166, 129, 224);
      color:rgb(35, 48, 35);
      font-size: 20px;
      margin: 10px;
      padding: 30px;
      cursor: pointer;
      border-radius: 20px;
-     border: 2px solid #4CAF50;
+     border: 2px solid #3057f3;
      text-decoration: none;
      text-align: center;
      animation-name: happy;
@@ -43,16 +45,26 @@ body {
     
  }
 
- .form-content , h1 {
+ .form-container , h1 {
      display: flex;
      justify-content: center;
      align-items: flex-end;
 
  }
 
- /* .first-container {
-     display: none;
- } */
+  .first-container {
+      background-color: seashell;
+      width: 95%;
+      height: 100%;
+      margin: auto;
+      position: fixed;
+	  top: 0;
+	  left: 0;
+	  z-index: 1;
+      visibility: visible;
+  }
+
+   
 
 /* nothing is happening why? */
  .second-container {
@@ -61,4 +73,34 @@ body {
      align-items: center;
      color:rgb(30, 155, 204);
      border: 2px solid red;
+ }
+ .spaceship , .boxes, .wrong-letters, .p2-input {
+     height: 200px;
+     width: 200px;
+     border: 2px solid black;
+     /* display: flex;
+     flex-direction: row; */
+     display: inline-block;
+     margin: auto;
+ }
+ #secret-letter {
+     /* visibility: hidden; */
+     width: 30px;
+    height: 30px;
+    border: 1px solid salmon;
+ }
+ .spaceship {
+     background-color: #313eee;
+     width: 800px;
+     height: 900px;
+ }
+ .boxes {
+     background-color: aqua;
+ }
+ .wrong-letters {
+     background-color:rgb(166, 129, 224);
+ }
+
+ .p2-input {
+     background-color: salmon;
  }
