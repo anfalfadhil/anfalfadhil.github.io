@@ -41,7 +41,7 @@ img.src = 'spaceship/empty.jpg';
 img.setAttribute('class', 'img');
 
 const appendFuction = () => {
-let enteredWord = document.getElementById("input-box").value;
+let enteredWord = document.getElementById("input-box").value.toLowerCase();
 // console.log(enteredWord);
 let lettersArray = enteredWord.split('');
 globalLettersArray.push(lettersArray);
@@ -73,17 +73,19 @@ const addPic = () => {
 }
 let mistakesCounter = 0;
 let checkingFunction = () => {
-    let enteredLetter =  document.querySelector(".p2-input-box").value;
+    let enteredLetter =  document.querySelector(".p2-input-box").value.toLowerCase();
     // console.log(enteredLetter);
             console.log(globalLettersArray);
             console.log(enteredLetter);
         if (globalLettersArray.includes(enteredLetter)){
             // globalLettersArray.indexOf(enteredLetter)
             console.log('match');
+            
         } else {
             // document.querySelector("body > div.second-container > div.spaceship").style.background-image.url = 'spaceship/' + mistakesCounter +'.jpg'
             img.src = 'spaceship/' + mistakesCounter +'.jpg'
             mistakesCounter ++; 
+            document.querySelector("body > div.second-container > div.wrong-letters").append(enteredLetter, ", ");
             
         }
 }
