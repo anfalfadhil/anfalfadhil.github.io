@@ -64,7 +64,7 @@ enterButton.onclick = appendFuction;
 
 ////////////////
 // once p1 enters the word container 1 will disappear and form 2 will appear
-let checkButton = document.querySelector("body > div:nth-child(2) > div.p2-input > form > button");
+let checkButton = document.querySelector("body > div.second-container > div.p2-input-container > form > button");
 // document.getElementById("p2-input-box").value;
 
 
@@ -73,13 +73,12 @@ const addPic = () => {
 }
 let mistakesCounter = 0;
 let checkingFunction = () => {
-    let enteredLetter =  document.querySelector("#p2-input-box").value;
+    let enteredLetter =  document.querySelector(".p2-input-box").value;
     // console.log(enteredLetter);
             console.log(globalLettersArray);
             console.log(enteredLetter);
         if (globalLettersArray.includes(enteredLetter)){
             // globalLettersArray.indexOf(enteredLetter)
-            // document.querySellector('#secret-letter').style.visibility = visible;
             console.log('match');
         } else {
             // document.querySelector("body > div.second-container > div.spaceship").style.background-image.url = 'spaceship/' + mistakesCounter +'.jpg'
