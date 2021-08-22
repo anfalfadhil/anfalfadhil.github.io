@@ -38,6 +38,7 @@ let picsArray = ['spaceship/0.jpg', 'spaceship/1.jpg', 'spaceship/1.jpg', 'space
 let img = document.createElement('img');
 document.querySelector("body > div:nth-child(2) > div.spaceship").append(img);
 img.src = 'spaceship/empty.jpg';
+img.setAttribute('class', 'img');
 
 const appendFuction = () => {
 let enteredWord = document.getElementById("input-box").value;
@@ -45,6 +46,7 @@ let enteredWord = document.getElementById("input-box").value;
 let lettersArray = enteredWord.split('');
 globalLettersArray.push(lettersArray);
 document.querySelector("body > div.first-container").style.visibility = "hidden";
+document.querySelector("body > div:nth-child(2)").style.visibility = 'unset';
 // console.log(lettersArray);
 // console.log(lettersArray.length);
     for (let i = 0; i< lettersArray.length; i++) {
@@ -80,6 +82,7 @@ let checkingFunction = () => {
             // document.querySellector('#secret-letter').style.visibility = visible;
             console.log('match');
         } else {
+            // document.querySelector("body > div.second-container > div.spaceship").style.background-image.url = 'spaceship/' + mistakesCounter +'.jpg'
             img.src = 'spaceship/' + mistakesCounter +'.jpg'
             mistakesCounter ++; 
             
