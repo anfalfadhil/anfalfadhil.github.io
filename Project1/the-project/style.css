@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Oswald:wght@300&family=Rampart+One&display=swap');
 
 body {
     background-color: rgb(33, 53, 131);
@@ -131,7 +132,7 @@ body {
  .second-container {
      background-color:rgb(30, 155, 204);
      border: 2px solid red;
-     position: absolute;
+     position: relative;
       top: 0px;
       right: 0px;
       bottom: 0px;
@@ -147,10 +148,18 @@ body {
  }
  #secret-letter {
      /* visibility: hidden; */
-     width: 30px;
-    height: 30px;
+   
     border: 1px solid salmon;
-    display: inline;
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 100px;
+    text-align: center;
+    border-radius: 50px;
+
+   
  }
  .spaceship {
     /* background-image: url('spaceship/empty.jpg'); */
@@ -158,9 +167,9 @@ body {
      background-color: #313eee;
      width: 2000px;
      height: 1900px;
-     position: relative;
+     position: absolute;
      top:0;
-     left: 900px;
+     right: 0;
     
  }
 .img {
@@ -169,13 +178,50 @@ body {
 }
  .boxes {
      background-color: aqua;
+     width: 1500px;
+     height: 600px;
+     display: block;
+     position: relative;
+     left: -1000px;
+    
  }
  .wrong-letters {
      background-color:rgb(166, 129, 224);
+     width: 1500px;
+     height: 600px;
+     display: inline-block;
+     position: relative;
+     left: 140px;
  }
 
- .p2-input {
+ .p2-input-container {
+    position: relative;
+    top:-90px;
+    left: -90px;
+    background-color: lightgreen;
+    height: 700px;
+    width: 1000PX;
+ }
+ .p2-form {
+    position: absolute;
+    
+ }
+
+
+ .p2-input-box {
+     height: 100px;
+     width: 300px;
      background-color: salmon;
+     position: relative;
+     top:200px;
+     left: 200px;
+ }
+ .p2-button {
+    position: relative;
+    height:100px;
+    width:200px;
+    top:150px;
+    left:150px;
  }
  .form-container {
      position: relative;
