@@ -1,22 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Rampart+One&display=swap');
+
 body {
-    background-color: rgb(248, 228, 248);
-    display: flex;
+    background-color: rgb(33, 53, 131);
+  
     
 }
 
-.password-field{
-    -webkit-text-security: disc;
- }
+
  input[type=password] {
+    -webkit-text-security: disc;
     width: 200px;
-    height: 70px;
+    height: 100px;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 8px;
     box-sizing: border-box;
-    display: flex;
+    /* display: flex; */
     font-size: xx-large;
     border-radius: 20px;
-    border: 2px solid #313eee;
+    border: 5px solid #7833d8;
+    background-color: rgb(183, 167, 242);
 
  }
  @keyframes happy {
@@ -24,7 +26,7 @@ body {
     to {left:200px; top:200px;}
   }
 
- .button {
+ /* .button {
      height: 40px;
      width: 100px;
      display: flex;
@@ -41,42 +43,102 @@ body {
      text-decoration: none;
      text-align: center;
      animation-name: happy;
-     animation-duration: 4s;
-    
- }
+     animation-duration: 4s; 
+ } */
 
- .form-container , h1 {
-     display: flex;
-     justify-content: center;
-     align-items: flex-end;
+ /* https://webdeasy.de/en/top-css-buttons-en/ */
+ .glow-on-hover {
+    width: 150px;
+    height: 75px;
+    color: #fff;
+    background: rgb(165, 119, 224);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
 
- }
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: rgb(57, 6, 105)
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(57, 19, 119);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
 
   .first-container {
-      background-color: seashell;
-      width: 95%;
-      height: 100%;
+      background-image: url('spaceship/first-container.jpg');
+      background-size: cover;
+      background-color: rgb(120, 32, 243);
+      width: 100vh;
+      height: 100vh;
       margin: auto;
-      position: fixed;
-	  top: 0;
-	  left: 0;
+      /* position: fixed; */
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+	  /* top: 0;
+	  left: 0; */
 	  z-index: 1;
-      visibility: visible;
+      /* visibility: visible; */
+      /* display: flex;
+      flex-direction: column; */
+   
   }
 
-   
-
-/* nothing is happening why? */
  .second-container {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     color:rgb(30, 155, 204);
+     background-color:rgb(30, 155, 204);
      border: 2px solid red;
+     position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      visibility: hidden;
  }
  .spaceship , .boxes, .wrong-letters, .p2-input {
-     height: 200px;
-     width: 200px;
      border: 2px solid black;
      /* display: flex;
      flex-direction: row; */
@@ -88,12 +150,23 @@ body {
      width: 30px;
     height: 30px;
     border: 1px solid salmon;
+    display: inline;
  }
  .spaceship {
+    /* background-image: url('spaceship/empty.jpg'); */
+    /* background-size: cover; */
      background-color: #313eee;
-     width: 800px;
-     height: 900px;
+     width: 2000px;
+     height: 1900px;
+     position: relative;
+     top:0;
+     left: 900px;
+    
  }
+.img {
+    height: 100%;
+    width: 100%;
+}
  .boxes {
      background-color: aqua;
  }
@@ -104,3 +177,12 @@ body {
  .p2-input {
      background-color: salmon;
  }
+ .form-container {
+     position: relative;
+     top:1000px;
+     left: 900px;
+     text-align: justify;
+     font-family: 'Oswald', sans-serif;
+     font-size: xx-large;
+ }
+
