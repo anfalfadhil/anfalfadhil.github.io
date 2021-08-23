@@ -12,14 +12,13 @@ body {
     -webkit-text-security: disc;
     width: 200px;
     height: 100px;
-    padding: 12px 20px;
-    margin: 8px;
-    box-sizing: border-box;
+    padding: 15px;
+    margin: 20px;
     /* display: flex; */
-    font-size: xx-large;
+    font-size: 100px;
     border-radius: 20px;
     border: 5px solid #7833d8;
-    background-color: rgb(183, 167, 242);
+    background-color: rgb(210, 199, 250);
 
  }
  @keyframes happy {
@@ -27,25 +26,6 @@ body {
     to {left:200px; top:200px;}
   }
 
- /* .button {
-     height: 40px;
-     width: 100px;
-     display: flex;
-     justify-content: center;
-     align-items: flex-end;
-     background-color: rgb(166, 129, 224);
-     color:rgb(35, 48, 35);
-     font-size: 20px;
-     margin: 10px;
-     padding: 30px;
-     cursor: pointer;
-     border-radius: 20px;
-     border: 2px solid #3057f3;
-     text-decoration: none;
-     text-align: center;
-     animation-name: happy;
-     animation-duration: 4s; 
- } */
 
  /* https://webdeasy.de/en/top-css-buttons-en/ */
  .glow-on-hover {
@@ -115,7 +95,7 @@ body {
       height: 100vh;
       margin: auto;
       /* position: fixed; */
-      position: absolute;
+      position: relative;
       top: 0px;
       right: 0px;
       bottom: 0px;
@@ -166,7 +146,7 @@ body {
     /* background-size: cover; */
      background-color: #313eee;
      width: 2000px;
-     height: 1900px;
+     height: 1825px;
      position: absolute;
      top:0;
      right: 0;
@@ -227,8 +207,9 @@ body {
      background-color: salmon;
      position: relative;
      top:200px;
-     left: 200px;
-     border-radius: 30px;font-family: 'Kaushan Script', cursive;
+     left: 300px;
+     border-radius: 30px;
+     font-family: 'Kaushan Script', cursive;
      font-size: 100px;
      text-align: center;
 
@@ -237,16 +218,37 @@ body {
     position: relative;
     height:150px;
     width:250px;
-    top:150px;
-    left:150px;
+    top:250px;
+    left:220px;
     border-radius: 30px;
+    font-family: 'Kaushan Script', cursive;
+     font-size: 40px;
  }
  .form-container {
-     position: relative;
-     top:1000px;
-     left: 900px;
-     text-align: justify;
+     position: absolute;
+     bottom: 150px;
+     right:50px;
+     height: 20vh;
+     width:20vw;
+     margin: 50px;
+     text-align: center;
      font-family: 'Oswald', sans-serif;
      font-size: xx-large;
+ }
+
+ .third-container {
+     height: 800px;
+     width: 1000px;
+     border: 2px solid black;
+     border-radius: 50px;
+     background-color: rgb(163, 199, 250);
+     margin: auto;
+     position: absolute;
+     top: 0px;
+     right: 0px;
+     bottom: 0px;
+     left: 0px;
+     z-index: 1;
+     visibility: hidden;
  }
 
