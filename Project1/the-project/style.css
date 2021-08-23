@@ -94,8 +94,8 @@ body {
       width: 100vh;
       height: 100vh;
       margin: auto;
-      /* position: fixed; */
-      position: relative;
+      position: fixed;
+      /* position: relative; */
       top: 0px;
       right: 0px;
       bottom: 0px;
@@ -110,22 +110,29 @@ body {
   }
 
  .second-container {
-     background-color:rgb(30, 155, 204);
+     /* background-color:rgb(30, 155, 204); */
+     background-image: url('spaceship/empty.jpg');
+    background-size: cover;
      border: 2px solid red;
-     position: relative;
-      top: 0px;
+     /* position: relative; */
+     display: grid;
+     grid-gap: 20px;
+     grid-template-columns: 1fr 2fr;
+     /* grid-template-rows: 1fr 1fr 1fr; */
+     border-radius: 50px;
+      /* top: 0px;
       right: 0px;
       bottom: 0px;
-      left: 0px;
+      left: 0px; */
       visibility: hidden;
  }
- .spaceship , .boxes, .wrong-letters, .p2-input {
-     border: 2px solid black;
+ /* .spaceship , .boxes, .wrong-letters, .p2-input {
+     border: 2px solid black; */
      /* display: flex;
      flex-direction: row; */
-     display: inline-block;
-     margin: auto;
- }
+     /* display: inline-block;
+     margin: auto; */
+ /* } */
  #secret-letter {
      /* visibility: hidden; */
    
@@ -138,6 +145,8 @@ body {
     font-size: 100px;
     text-align: center;
     border-radius: 50px;
+    color: black;
+    background-color: black;
 
    
  }
@@ -145,40 +154,40 @@ body {
     /* background-image: url('spaceship/empty.jpg'); */
     /* background-size: cover; */
      background-color: #313eee;
-     width: 2000px;
-     height: 1825px;
-     position: absolute;
+     /* width: 100vh;
+     height: 100vh; */
+     /* position: absolute;
      top:0;
-     right: 0;
+     right: 0; */
+     border-radius: 50px;
     
  }
 .img {
     height: 100%;
     width: 100%;
+    border-radius: 50px;
 }
  .boxes {
      background-color: aqua;
-     width: 1500px;
-     height: 600px;
-     display: block;
+     /* width: 1500px;
+     height: 600px; */
      position: relative;
-     left: -1000px;
      font-family: 'Kaushan Script', cursive;
     font-size: 70px;
     text-align: center;
     border-radius: 50px;
-    padding: 5px;
+    /* padding: 5px; */
 
 
     
  }
  .wrong-letters {
      background-color:rgb(166, 129, 224);
-     width: 1500px;
-     height: 600px;
-     display: inline-block;
+     /* width: 1500px;
+     height: 600px; */
+     /* display: block;
      position: relative;
-     left: 140px;
+     left: 0px; */
      font-family: 'Kaushan Script', cursive;
     font-size: 100px;
     text-align: center;
@@ -186,19 +195,20 @@ body {
  }
 
  .p2-input-container {
-    position: relative;
+    /* position: relative;
+    display: block;
     top:0;
-    left: 140px;
+    left: 140px; */
     background-color: lightgreen;
-    width: 1500px;
-    height: 600px;
+    /* width: 1500px;
+    height: 600px; */
     border-radius: 50px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
  }
- .p2-form {
+ /* .p2-form {
     position: absolute;
     
- }
+ } */
 
 
  .p2-input-box {
@@ -206,12 +216,13 @@ body {
      width: 500px;
      background-color: salmon;
      position: relative;
-     top:200px;
-     left: 300px;
+     top:150px;
+     left: 250px;
      border-radius: 30px;
      font-family: 'Kaushan Script', cursive;
      font-size: 100px;
      text-align: center;
+     
 
  }
  .p2-button {
