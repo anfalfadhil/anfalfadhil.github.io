@@ -85,7 +85,16 @@ let checkingFunction = () => {
             // document.querySelector("body > div.second-container > div.spaceship").style.background-image.url = 'spaceship/' + mistakesCounter +'.jpg'
             img.src = 'spaceship/' + mistakesCounter +'.jpg'
             mistakesCounter ++; 
+            console.log(mistakesCounter);
             document.querySelector("body > div.second-container > div.wrong-letters").append(enteredLetter, ", ");
+                if (mistakesCounter === 19) {
+                    let result = document.createElement('h1');
+                    result.setAttribute = ('class', 'result');
+                    document.querySelector('.third-container').append(result);
+                    result.innerTexet = 'Player One Wins, The spaceman is Safe';
+                    document.quirySlector('.second-container').style.opacity= '0.3';
+                    document.querySelector("body > div.third-container").style.visibiltiy = 'unset';
+                }
             
         }
 }
