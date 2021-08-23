@@ -39,12 +39,12 @@ let img = document.createElement('img');
 document.querySelector("body > div:nth-child(2) > div.spaceship").append(img);
 img.src = 'spaceship/empty.jpg';
 img.setAttribute('class', 'img');
-
+let secretBoxes =[];
 const appendFuction = () => {
 let enteredWord = document.getElementById("input-box").value.toLowerCase();
 // console.log(enteredWord);
 let lettersArray = enteredWord.split('');
-globalLettersArray.push(lettersArray);
+globalLettersArray= lettersArray;
 document.querySelector("body > div.first-container").style.visibility = "hidden";
 document.querySelector("body > div:nth-child(2)").style.visibility = 'unset';
 // console.log(lettersArray);
@@ -54,7 +54,8 @@ document.querySelector("body > div:nth-child(2)").style.visibility = 'unset';
         document.querySelector('.boxes').append(box);
         box.setAttribute('id', 'secret-letter');
         box.innerText = lettersArray[i];
-        // console.log(box);
+        secretBoxes.push(box);
+        console.log(secretBoxes);
     }
 }
 //  console.log('global Array = ', globalLettersArray);
@@ -68,18 +69,39 @@ let checkButton = document.querySelector("body > div.second-container > div.p2-i
 // document.getElementById("p2-input-box").value;
 
 
-const addPic = () => {
-
-}
+let indexes = [];
 let mistakesCounter = 0;
 let checkingFunction = () => {
-    let enteredLetter =  document.querySelector(".p2-input-box").value.toLowerCase();
-    // console.log(enteredLetter);
+    let enteredLetter = document.querySelector(".p2-input-box").value.toLowerCase();
             console.log(globalLettersArray);
             console.log(enteredLetter);
         if (globalLettersArray.includes(enteredLetter)){
-            // globalLettersArray.indexOf(enteredLetter)
+            // if (globalLettersArray.findIndex(enteredLetter)) {
+            let index = globalLettersArray.indexOf(enteredLetter);
+            console.log(index);
             console.log('match');
+            // document.querySelector('#secret-letter')
+            // for (let i = 0; i < globalLettersArray.length; i++){
+                console.log(secretBoxes);
+
+// https://stackoverflow.com/questions/20798477/how-to-find-index-of-all-occurrences-of-element-in-array
+
+                let getAllMatchingLetters = (array, letter) => {
+                     i = -1;
+                    while ((i = array.indexOf(letter, i+1)) != -1){
+                        indexes.push(i);
+                    }
+                    return indexes;
+                }
+                
+                 getAllMatchingLetters(globalLettersArray, enteredLetter);
+                for( let i=0; i< indexes.length; i++) {
+                    secretBoxes[indexes[i]].style.color = 'red';
+                }
+                
+                // secretBoxes[index].style.color = 'red';
+            // }
+            
             
         } else {
             // document.querySelector("body > div.second-container > div.spaceship").style.background-image.url = 'spaceship/' + mistakesCounter +'.jpg'
@@ -92,7 +114,7 @@ let checkingFunction = () => {
                     result.setAttribute = ('class', 'result');
                     document.querySelector('.third-container').append(result);
                     result.innerTexet = 'Player One Wins, The spaceman is Safe';
-                    document.quirySlector('.second-container').style.opacity= '0.3';
+                    document.querySelector("body > div.second-container").style.opacity= '0.3';
                     document.querySelector("body > div.third-container").style.visibiltiy = 'unset';
                 }
             
