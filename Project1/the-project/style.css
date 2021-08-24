@@ -234,6 +234,7 @@ body {
     border-radius: 30px;
     font-family: 'Kaushan Script', cursive;
      font-size: 40px;
+     cursor: pointer;
  }
  .form-container {
      position: absolute;
@@ -252,7 +253,7 @@ body {
      width: 1000px;
      border: 2px solid black;
      border-radius: 50px;
-     background-color: rgb(163, 199, 250);
+     background-color: rgb(184, 209, 92);
      margin: auto;
      position: absolute;
      top: 0px;
@@ -263,3 +264,24 @@ body {
      visibility: hidden;
  }
 
+ .result {
+     color: black;
+     font-size: 100px;
+     font-family: 'Kaushan Script', cursive;
+     text-align: center;
+     margin: auto;
+     position: relative;
+ }
+ .replay-button {
+     height: 100px;
+     width: 150px;
+     border: 1px solid black;
+     border-radius: 10px;
+     position: relative;
+     top: 550px;
+     left: 400px;
+     cursor: pointer;
+     background-color: rgb(30, 37, 142);
+     color:rgb(171, 211, 28);
+     font-size: 30px;
+ }
