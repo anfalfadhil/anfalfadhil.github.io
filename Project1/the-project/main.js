@@ -63,11 +63,9 @@ enterButton.onclick = appendFuction;
 ////////////////
 
 let checkButton = document.querySelector("body > div.second-container > div.p2-input-container > form > button");
-
-
-
 let indexes = [];
 let mistakesCounter = 0;
+let revealedLetters = [];
 
 let endGame = () => {
     if ( mistakesCounter > 18) {
@@ -76,45 +74,31 @@ let endGame = () => {
         globalLettersArray = [];
     }
 }
-let revealedLetters = [];
 
 let checkEnd = () => {
- if ( globalLettersArray.every(element => revealedLetters.includes(element))) {
-    console.log(revealedLetters); 
-    console.log('p2 wins');
-    let result = document.createElement('h1');
-    result.setAttribute('class', 'result');
-    document.querySelector("body > div.third-container").append(result);
-    result.innerText = 'Player Two Wins, The spaceman is Gone';
-    document.querySelector("body > div.second-container").style.opacity=    '0';
-    document.querySelector("body > div.third-container").style. visibility = 'unset';
-    endGame();
- }
-}
-
-      
-
-    
-       
-        // } else if (mistakesCounter > 18) {
-        //     let result = document.createElement('h1');
-        //     result.setAttribute('class', 'result');
-        //     document.querySelector("body > div.third-container").append(result);
-        //     result.innerText = 'Player One Wins, The spaceman is Safe';
-        //     document.querySelector("body > div.second-container").style.opacity= '0';
-        //     document.querySelector("body > div.third-container").style.visibility = 'unset';
-        //     endGame();
-        // }
-    // } 
-
-   
-
+    if ( globalLettersArray.every(element => revealedLetters.includes(element))) {
+        console.log(revealedLetters); 
+        console.log('p2 wins');
+        let result = document.createElement('h1');
+        result.setAttribute('class', 'result');
+        document.querySelector("body > div.third-container").append(result);
+        result.innerText = 'Player Two Wins, The spaceman is Gone';
+        document.querySelector("body > div.second-container").style.opacity=    '0';
+        document.querySelector("body > div.third-container").style. visibility = 'unset';
+        endGame();
+    } else if (mistakesCounter > 18) {
+        let result = document.createElement('h1');
+        result.setAttribute('class', 'result');
+        document.querySelector("body > div.third-container").append(result);
+        result.innerText = 'Player One Wins, The spaceman is Safe';
+        document.querySelector("body > div.second-container").style.opacity= '0';
+        document.querySelector("body > div.third-container").style.visibility = 'unset';
+        endGame();
+    }
+} 
 
 let checkingFunction = () => {
     let enteredLetter = document.querySelector(".p2-input-box").value.toLowerCase();
-            console.log(globalLettersArray);
-            console.log(enteredLetter);
-            console.log(revealedLetters);
         if (globalLettersArray.includes(enteredLetter)){
             let index = globalLettersArray.indexOf(enteredLetter);
             console.log(index);
@@ -134,55 +118,30 @@ let checkingFunction = () => {
                  getAllMatchingLetters(globalLettersArray, enteredLetter);
                 for( let i=0; i< indexes.length; i++) {
                     secretBoxes[indexes[i]].style.color = 'white';
-                   
-                    // revealedLetters.push(secretBoxes[i].innerHtml);
-                    // console.log(revealedLetters);
                     checkEnd();
                 }  
-            // console.log(secretBoxes.currentTarget.value);
-            // console.log(secretBoxes.forEach(element => element.currentTarget.value.style.color));
         } else {
-            // document.querySelector("body > div.second-container > div.spaceship").style.background-image.url = 'spaceship/' + mistakesCounter +'.jpg'
             img.src = 'spaceship/' + mistakesCounter +'.jpg'
             mistakesCounter ++; 
-            console.log(mistakesCounter);
             document.querySelector("body > div.second-container > div.wrong-letters").append(enteredLetter, ", ");
-            
-            // it's not applying this if statemnet why??
-            // if (mistakesCounter <= 18 && secretBoxes.forEach(element => element.style.color = 'red')) {
-            //     let result = document.createElement('h1');
-            //     result.setAttribute('class', 'result');
-            //     document.querySelector("body > div.third-container").append(result);
-            //     result.innerText = 'Player Two Wins, The spaceman is Gone';
-            //     document.querySelector("body > div.second-container").style.opacity=    '0';
-            //     document.querySelector("body > div.third-container").style. visibility = 'unset';
-            //     endGame();
-            // } else if (mistakesCounter > 18) {
-            //         let result = document.createElement('h1');
-            //         result.setAttribute('class', 'result');
-            //         document.querySelector("body > div.third-container").append(result);
-            //         result.innerText = 'Player One Wins, The spaceman is Safe';
-            //         document.querySelector("body > div.second-container").style.opacity= '0';
-            //         document.querySelector("body > div.third-container").style.visibility = 'unset';
-            //         endGame();
-            //     }
             checkEnd();
             
         }
 }
 
-// const playAgainFunction = () => {
-//     endGame();
-//     document.querySelector("body > div.third-container").style.visibility = 'hidden';
-//     document.querySelector("body > div.first-container").style.visibility = 'unset';
-//     enterButton.onclick = appendFuction;
-//     // appendFunction should make the second container appear but it's not. why??
-//     checkButton.onclick = checkingFunction;
-//     // document.querySelector("body > div.third-container").style.visibility = 'unset';
-// }
+const playAgainFunction = () => {
+    console.log('play again function');
+    endGame();
+    document.querySelector("body > div.third-container").style.visibility = 'hidden';
+    document.querySelector("body > div:nth-child(2)").style.visibility = 'unset';
+    document.querySelector("body > div.first-container").style.visibility = 'unset';
+    enterButton.onclick = appendFuction;
+    checkButton.onclick = checkingFunction;
+    // document.querySelector("body > div.third-container").style.visibility = 'unset';
+}
 checkButton.onclick = checkingFunction;
 const playAgainButton = document.querySelector("body > div.third-container > button");
-// playAgainButton.onclick = playAgainFunction;
+playAgainButton.onclick = playAgainFunction;
 
 
 
