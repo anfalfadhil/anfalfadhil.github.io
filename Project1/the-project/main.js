@@ -80,21 +80,22 @@ let revealedLetters = [];
 
 let checkEnd = () => {
  if ( globalLettersArray.every(element => revealedLetters.includes(element))) {
-     console.log(revealedLetters); 
-      console.log('p2 wins');
+    console.log(revealedLetters); 
+    console.log('p2 wins');
+    let result = document.createElement('h1');
+    result.setAttribute('class', 'result');
+    document.querySelector("body > div.third-container").append(result);
+    result.innerText = 'Player Two Wins, The spaceman is Gone';
+    document.querySelector("body > div.second-container").style.opacity=    '0';
+    document.querySelector("body > div.third-container").style. visibility = 'unset';
+    endGame();
  }
+}
+
       
 
     
-        // if (revealedLetters.forEach(element => element.style.color === 'white') && mistakesCounter < 19) {
-        
-        // let result = document.createElement('h1');
-        // result.setAttribute('class', 'result');
-        // document.querySelector("body > div.third-container").append(result);
-        // result.innerText = 'Player Two Wins, The spaceman is Gone';
-        // document.querySelector("body > div.second-container").style.opacity=    '0';
-        // document.querySelector("body > div.third-container").style. visibility = 'unset';
-        // endGame();
+       
         // } else if (mistakesCounter > 18) {
         //     let result = document.createElement('h1');
         //     result.setAttribute('class', 'result');
@@ -104,7 +105,7 @@ let checkEnd = () => {
         //     document.querySelector("body > div.third-container").style.visibility = 'unset';
         //     endGame();
         // }
-    } 
+    // } 
 
    
 
