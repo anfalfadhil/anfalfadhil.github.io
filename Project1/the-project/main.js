@@ -34,7 +34,7 @@ console.log("I did it")
 
 
 let globalLettersArray =[];
-let picsArray = ['spaceship/0.jpg', 'spaceship/1.jpg', 'spaceship/1.jpg', 'spaceship/2.jpg', 'spaceship/3.jpg', 'spaceship/4.jpg', 'spaceship/5.jpg', 'spaceship/6.jpg', 'spaceship/7.jpg', 'spaceship/8.jpg', 'spaceship/9.jpg', 'spaceship/10.jpg', 'spaceship/11.jpg', 'spaceship/12.jpg', 'spaceship/13.jpg', 'spaceship/14.jpg', 'spaceship/15.jpg', 'spaceship/16.jpg', 'spaceship/17.jpg', ]
+let picsArray = ['spaceship/0.jpg', 'spaceship/1.jpg', 'spaceship/1.jpg', 'spaceship/2.jpg', 'spaceship/3.jpg', 'spaceship/4.jpg', 'spaceship/5.jpg', 'spaceship/6.jpg', 'spaceship/7.jpg', 'spaceship/8.jpg', 'spaceship/9.jpg', 'spaceship/10.jpg', 'spaceship/11.jpg', 'spaceship/12.jpg', 'spaceship/13.jpg', 'spaceship/14.jpg', 'spaceship/15.jpg', 'spaceship/16.jpg', 'spaceship/17.jpg' ];
 let img = document.createElement('img');
 document.querySelector("body > div:nth-child(2) > div.spaceship").append(img);
 img.src = 'spaceship/empty.jpg';
@@ -109,13 +109,14 @@ let checkingFunction = () => {
             mistakesCounter ++; 
             console.log(mistakesCounter);
             document.querySelector("body > div.second-container > div.wrong-letters").append(enteredLetter, ", ");
-                if (mistakesCounter === 19) {
+                if (mistakesCounter > 18) {
                     let result = document.createElement('h1');
-                    result.setAttribute = ('class', 'result');
-                    document.querySelector('.third-container').append(result);
-                    result.innerTexet = 'Player One Wins, The spaceman is Safe';
-                    document.querySelector("body > div.second-container").style.opacity= '0.3';
-                    document.querySelector("body > div.third-container").style.visibiltiy = 'unset';
+                    result.setAttribute('class', 'result');
+                    document.querySelector("body > div.third-container").append(result);
+                    result.innerText = 'Player One Wins, The spaceman is Safe';
+                    document.querySelector("body > div.second-container").style.opacity= '0';
+                    document.querySelector("body > div.third-container").style.visibility = 'unset';
+                    
                 }
             
         }
