@@ -40,6 +40,7 @@ document.querySelector("body > div:nth-child(2) > div.spaceship").append(img);
 img.src = 'spaceship/empty.jpg';
 img.setAttribute('class', 'img');
 let secretBoxes =[];
+
 const appendFuction = () => {
 let enteredWord = document.getElementById("input-box").value.toLowerCase();
 // console.log(enteredWord);
@@ -58,31 +59,37 @@ document.querySelector("body > div:nth-child(2)").style.visibility = 'unset';
         console.log(secretBoxes);
     }
 }
-//  console.log('global Array = ', globalLettersArray);
 
 let enterButton = document.querySelector("body > div.first-container > div > form > button");
 enterButton.onclick = appendFuction;
 
 ////////////////
-// once p1 enters the word container 1 will disappear and form 2 will appear
+
 let checkButton = document.querySelector("body > div.second-container > div.p2-input-container > form > button");
-// document.getElementById("p2-input-box").value;
+
 
 
 let indexes = [];
 let mistakesCounter = 0;
+
+let endGame = () => {
+    if ( mistakesCounter > 18) {
+        mistakesCounter = 0;
+        indexes = [];
+        globalLettersArray = [];
+    }
+}
+
+
 let checkingFunction = () => {
     let enteredLetter = document.querySelector(".p2-input-box").value.toLowerCase();
             console.log(globalLettersArray);
             console.log(enteredLetter);
         if (globalLettersArray.includes(enteredLetter)){
-            // if (globalLettersArray.findIndex(enteredLetter)) {
             let index = globalLettersArray.indexOf(enteredLetter);
             console.log(index);
             console.log('match');
-            // document.querySelector('#secret-letter')
-            // for (let i = 0; i < globalLettersArray.length; i++){
-                console.log(secretBoxes);
+            console.log(secretBoxes);
 
 // https://stackoverflow.com/questions/20798477/how-to-find-index-of-all-occurrences-of-element-in-array
 
@@ -93,14 +100,10 @@ let checkingFunction = () => {
                     }
                     return indexes;
                 }
-                
                  getAllMatchingLetters(globalLettersArray, enteredLetter);
                 for( let i=0; i< indexes.length; i++) {
                     secretBoxes[indexes[i]].style.color = 'red';
                 }
-                
-                // secretBoxes[index].style.color = 'red';
-            // }
             
             
         } else {
@@ -116,13 +119,19 @@ let checkingFunction = () => {
                     result.innerText = 'Player One Wins, The spaceman is Safe';
                     document.querySelector("body > div.second-container").style.opacity= '0';
                     document.querySelector("body > div.third-container").style.visibility = 'unset';
-                    
+                    endGame();
                 }
             
         }
 }
-checkButton.onclick = checkingFunction;
 
+// const playAgainFunction = () => {
+//     endGame();
+
+// }
+checkButton.onclick = checkingFunction;
+const playAgainButton = document.querySelector("body > div.third-container > button");
+// playAgainButton.onclick = endGame;
 
 
 
