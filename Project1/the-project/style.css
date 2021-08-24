@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Rampart+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Oswald:wght@300&family=Rampart+One&display=swap');
 
+
 body {
     background-color: rgb(33, 53, 131);
-  
-    
+    min-height: 100vh;
+    width: 100%;
+
 }
 
 
@@ -126,13 +128,7 @@ body {
       left: 0px; */
       visibility: hidden;
  }
- /* .spaceship , .boxes, .wrong-letters, .p2-input {
-     border: 2px solid black; */
-     /* display: flex;
-     flex-direction: row; */
-     /* display: inline-block;
-     margin: auto; */
- /* } */
+ 
  #secret-letter {
      /* visibility: hidden; */
    
@@ -204,12 +200,9 @@ body {
     height: 600px; */
     border-radius: 50px;
     /* border: 2px solid black; */
- }
- /* .p2-form {
-    position: absolute;
-    
- } */
+    display:grid;
 
+ }
 
  .p2-input-box {
      height: 200px;
@@ -284,4 +277,5 @@ body {
      background-color: rgb(30, 37, 142);
      color:rgb(171, 211, 28);
      font-size: 30px;
+     box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
  }
