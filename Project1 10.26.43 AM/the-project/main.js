@@ -136,7 +136,7 @@ let checkingFunction = () => {
         } else {
             img.src = 'spaceship/' + mistakesCounter +'.jpg'
             mistakesCounter ++; 
-            document.querySelector("body > div.second-container > div.wrong-letters").append(enteredLetter, ", ");
+            document.querySelector("body > div.second-container > div.wrong-letters-container").append(enteredLetter, ", ");
 
             checkEnd();
             
