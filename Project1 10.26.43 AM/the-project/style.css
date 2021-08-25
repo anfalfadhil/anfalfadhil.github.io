@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Rampart+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Oswald:wght@300&family=Rampart+One&display=swap');
 
-
+html, body {
+    height: 100%;
+    margin: 0;
+}
 body {
     background-color: rgb(33, 53, 131);
     min-height: 100vh;
@@ -93,16 +96,15 @@ body {
       background-image: url('spaceship/first-container.jpg');
       background-size: cover;
       background-color: rgb(120, 32, 243);
-      width: 100vh;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       margin: auto;
       position: fixed;
-    
-      top: 0px;
+      /* top: 0px;
       right: 0px;
       bottom: 0px;
-      left: 0px;
-
+      left: 0px; */
+      background-position: center;
 	  z-index: 1;
   
    
@@ -110,36 +112,46 @@ body {
 
  .second-container {
      /* background-color:rgb(30, 155, 204); */
-     background-image: url('spaceship/empty.jpg');
+    background-image: url('spaceship/empty.jpg');
     background-size: cover;
-     border: 2px solid red;
-     display: grid;
-     grid-gap: 20px;
-     grid-template-columns: 1fr 2fr;
-     border-radius: 50px;
-      visibility: hidden;
+    border: 2px solid red;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 2fr;
+    border-radius: 50px;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
  }
  
  #secret-letter {
      /* visibility: hidden; */
-    border: 1px solid salmon;
+
     display: inline-block;
-    height: 150px;
-    width: 150px;
-    margin: 20px;
+    height:60px;
+    width:60px;
+    margin: 5px;
     font-family: 'Kaushan Script', cursive;
-    font-size: 100px;
+    font-size: 40px;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 10px;
     color: black;
     background-color: black;
 
-   
  }
  .spaceship {
      background-color: #313eee;
      border-radius: 50px;
-    
+    height: 60vh;
+    width: 60vw;
  }
 .img {
     height: 100%;
@@ -147,41 +159,55 @@ body {
     border-radius: 50px;
 }
  .boxes {
-     background-color: aqua;
-     position: relative;
-     font-family: 'Kaushan Script', cursive;
-    font-size: 70px;
+    background-color: aqua;
+    position: relative;
+    font-family: 'Kaushan Script', cursive;
+    display: inline;
+    font-size: 5px;
     text-align: center;
     border-radius: 50px;
-
-
-    
+    position: relative;
+    height:100px;
+    width: 100px; 
  }
+ .boxes-container {
+    background-color: aqua;
+    position: relative;
+    font-family: 'Kaushan Script', cursive;
+   font-size: 20px;
+   text-align: center;
+   border-radius: 50px; 
+   width: 60vw;
+   height: 30vh;
+}
  .wrong-letters {
      background-color:rgb(166, 129, 224);
      font-family: 'Kaushan Script', cursive;
-    font-size: 100px;
+    font-size: 35px;
     text-align: center;
     border-radius: 50px;
+    width: 30vw;
+    height: 60vh;
  }
 
  .p2-input-container {
     background-color: lightgreen;
     border-radius: 50px;
     display:grid;
-
+    width: 30vw;
+    height: 30vh;
  }
 
  .p2-input-box {
-     height: 200px;
-     width: 500px;
+     height: 40%;
+     width: 40%;
      background-color: salmon;
      position: relative;
-     top:150px;
-     left: 250px;
+     top:55px;
+     left: 80px;
      border-radius: 30px;
      font-family: 'Kaushan Script', cursive;
-     font-size: 100px;
+     font-size: 50px;
      text-align: center;
      
 
@@ -190,12 +216,16 @@ body {
     position: relative;
     height:150px;
     width:250px;
-    top:250px;
-    left:220px;
+    top:75px;
+    left:45px;
     border-radius: 30px;
     font-family: 'Kaushan Script', cursive;
-     font-size: 40px;
+     font-size: 20px;
      cursor: pointer;
+     height: 30%;
+     width: 40%;
+     text-align: center;
+     background-color:rgb(238, 133, 168);
  }
  .form-container {
      height: 20vh;
