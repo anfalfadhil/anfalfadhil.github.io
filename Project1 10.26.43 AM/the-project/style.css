@@ -100,10 +100,10 @@ body {
       height: 100%;
       margin: auto;
       position: fixed;
-      /* top: 0px;
+      top: 0px;
       right: 0px;
       bottom: 0px;
-      left: 0px; */
+      left: 0px;
       background-position: center;
 	  z-index: 1;
   
@@ -114,11 +114,11 @@ body {
      /* background-color:rgb(30, 155, 204); */
     background-image: url('spaceship/empty.jpg');
     background-size: cover;
-    border: 2px solid red;
+
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 2fr;
-    border-radius: 50px;
+
     visibility: hidden;
     position: fixed;
     top: 0;
@@ -150,7 +150,7 @@ body {
  .spaceship {
      background-color: #313eee;
      border-radius: 50px;
-    height: 60vh;
+    height: 70vh;
     width: 60vw;
  }
 .img {
@@ -173,6 +173,7 @@ body {
  .boxes-container {
     background-color: aqua;
     position: relative;
+    top: 10px;
     font-family: 'Kaushan Script', cursive;
    font-size: 20px;
    text-align: center;
@@ -180,14 +181,17 @@ body {
    width: 60vw;
    height: 30vh;
 }
- .wrong-letters {
+ .wrong-letters-container {
      background-color:rgb(166, 129, 224);
      font-family: 'Kaushan Script', cursive;
     font-size: 35px;
     text-align: center;
     border-radius: 50px;
     width: 30vw;
-    height: 60vh;
+    height: 70vh;
+    position: relative;
+    top: 10px;
+    left: 20px;
  }
 
  .p2-input-container {
@@ -196,6 +200,9 @@ body {
     display:grid;
     width: 30vw;
     height: 30vh;
+    position: relative;
+    top: 10px;
+    left: 20px;
  }
 
  .p2-input-box {
