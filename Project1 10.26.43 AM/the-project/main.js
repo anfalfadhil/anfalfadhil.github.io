@@ -154,7 +154,7 @@ const playAgainFunction = () => {
     endGame();
     document.querySelector("body > div.third-container").style.visibility = 'hidden';
     document.querySelector("body > div.first-container").style.visibility = 'unset';
-    document.querySelector("body > div:nth-child(2)").style.visibility = 'visible';
+    document.querySelector("body > div:nth-child(2)").style.visibility = 'hidden';
     
     enterButton.onclick = appendFuction;
     checkButton.onclick = checkingFunction;
