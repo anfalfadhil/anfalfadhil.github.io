@@ -134,7 +134,7 @@ let checkingFunction = () => {
         } else {
             img.src = 'spaceship/' + mistakesCounter +'.jpg'
             mistakesCounter ++; 
-            document.querySelector("body > div.second-container > div.wrong-letters-container").append(enteredLetter, ", ");
+            document.querySelector("body > div.second-container > div.wrong-letters-container > div").append(enteredLetter, ", ");
             checkEnd();
         }
         document.querySelector("body > div.second-container > div.p2-input-container > form > input").value = '';  
@@ -142,6 +142,7 @@ let checkingFunction = () => {
 
 const playAgainFunction = () => {
     console.log('play again function');
+    
     mistakesCounter = 0;
     indexes = [];
     globalLettersArray = [];
@@ -151,7 +152,9 @@ const playAgainFunction = () => {
     document.querySelector("body > div:nth-child(2)").style.visibility = 'hidden';
     enterButton.onclick = appendFuction;
     checkButton.onclick = checkingFunction;
-
+    document.querySelector("body > div.second-container > div.boxes-container > div").innerHTML = '';
+    document.querySelector("body > div.second-container > div.wrong-letters-container > div").innerHTML = '';
+ 
 }
 
 checkButton.onclick = checkingFunction;
