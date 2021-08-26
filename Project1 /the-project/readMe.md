@@ -15,5 +15,7 @@ This game is built using basic HTML, Javascript was used to dynamically interact
 * in the future, working on adding some more animations and sound effects will be a good thing to do which will give the player more engaged experience and more fun.
 * adding players scores and timers will add some challenging motivation to the game.
 
+## play the game
+- [play the game](https://anfalfadhil.github.io/Project1/the-project/index.html)
 -------
 ## Enjoy :)
