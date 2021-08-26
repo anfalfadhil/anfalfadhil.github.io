@@ -84,17 +84,18 @@ let result = document.createElement('h1');
 result.setAttribute('class', 'result');
 document.querySelector("body > div.third-container").append(result);
 
-let endGame = (element) => {
+let endGame = (str) => {
     mistakesCounter = 0;
     indexes = [];
     globalLettersArray = [];
     checkButton.display = true;
-    result.innerText = element;
-    console.log(element);
+    result.innerHTML = str;
+    console.log(str);
     document.querySelector("body > div.third-container").style.visibility = 'visible';
     document.querySelector("body > div.first-container").style.visibility = 'hidden';
     document.querySelector("body > div:nth-child(2)").style.visibility = 'hidden';
-    document.querySelector("body > div.second-container > div.wrong-letters").innerHTML = ''; 
+    document.querySelector("body > div.second-container > div.wrong-letters-container > div").innerHTML = ''; 
+    
 }
 
 let checkEnd = () => {
@@ -122,11 +123,8 @@ let checkingFunction = () => {
                     while ((i = array.indexOf(letter, i+1)) != -1){
                         indexes.push(i);
                         revealedLetters.push(globalLettersArray[index]);
-
                     }
-                    
-                    return indexes;
-                    
+                    return indexes;  
                 }
                  getAllMatchingLetters(globalLettersArray, enteredLetter);
                 for( let i=0; i< indexes.length; i++) {
@@ -137,9 +135,7 @@ let checkingFunction = () => {
             img.src = 'spaceship/' + mistakesCounter +'.jpg'
             mistakesCounter ++; 
             document.querySelector("body > div.second-container > div.wrong-letters-container").append(enteredLetter, ", ");
-
             checkEnd();
-            
         }
         document.querySelector("body > div.second-container > div.p2-input-container > form > input").value = '';  
 }
@@ -150,17 +146,14 @@ const playAgainFunction = () => {
     indexes = [];
     globalLettersArray = [];
     checkButton.display = true;
-    document.querySelector("body > div.second-container > div.boxes-container > div").innerHTML = '';
-    endGame();
     document.querySelector("body > div.third-container").style.visibility = 'hidden';
     document.querySelector("body > div.first-container").style.visibility = 'unset';
     document.querySelector("body > div:nth-child(2)").style.visibility = 'hidden';
-    
     enterButton.onclick = appendFuction;
     checkButton.onclick = checkingFunction;
-    // document.querySelector("body > div.third-container").style.visibility = 'unset';
+
 }
-// checkInput();
+
 checkButton.onclick = checkingFunction;
 const playAgainButton = document.querySelector("body > div.third-container > button");
 playAgainButton.onclick = playAgainFunction;
