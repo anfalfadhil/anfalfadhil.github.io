@@ -27,8 +27,6 @@
 
 //////////////////
 
-let secretBoxes =[];
-let globalLettersArray =[];
 let picsArray = ['spaceship/0.jpg', 'spaceship/1.jpg', 'spaceship/1.jpg', 'spaceship/2.jpg', 'spaceship/3.jpg', 'spaceship/4.jpg', 'spaceship/5.jpg', 'spaceship/6.jpg', 'spaceship/7.jpg', 'spaceship/8.jpg', 'spaceship/9.jpg', 'spaceship/10.jpg', 'spaceship/11.jpg', 'spaceship/12.jpg', 'spaceship/13.jpg', 'spaceship/14.jpg', 'spaceship/15.jpg', 'spaceship/16.jpg', 'spaceship/17.jpg' ];
 let img = document.createElement('img');
 document.querySelector("body > div:nth-child(2) > div.spaceship").append(img);
@@ -44,13 +42,14 @@ const checkInput = () => {
         appendFuction;
     }
 }
-
+let secretLetters = [];
 const appendFuction = () => {
     checkInput();
     let enteredWord = document.getElementById("input-box").value.toLowerCase();
     let lettersArray = enteredWord.split('');
     globalLettersArray= lettersArray;
     console.log(lettersArray)
+
     document.getElementById('input-box').value = '';
     document.querySelector(".first-container").style.visibility = "hidden";
     document.querySelector(".second-container").style.visibility = 'unset';
@@ -59,8 +58,8 @@ const appendFuction = () => {
         document.querySelector(".boxes").append(box);
         box.setAttribute('id', 'secret-letter');
         box.innerText = lettersArray[i];
-        secretBoxes.push(box);
-        console.log(secretBoxes);
+        secretLetters.push(box);
+      
         
     } 
 } 
@@ -84,16 +83,19 @@ let endGame = (str) => {
     globalLettersArray = [];
     checkButton.display = true;
     result.innerHTML = str;
+    secretLetters= [];
     document.querySelector(".third-container").style.visibility = 'visible';
     document.querySelector(".first-container").style.visibility = 'hidden';
-    document.querySelector(".second-conatiner").style.visibility = 'hidden';
-    document.querySelector(".wrong-letters").innerHTML = ''; 
+    document.querySelector(".second-container").style.visibility = 'hidden';
+    document.querySelector(".wrong-letters").innerHTML = '';
+    document.querySelector('.p2-input-box').innerHTML = '';
+    document.querySelector('.boxes').innerHTML = '';
 }
 
 let checkEnd = () => {
     if ( globalLettersArray.every(element => revealedLetters.includes(element))) {
         endGame('Player Two Wins, The Spaceman is Safe');
-    } else if (mistakesCounter > 18) {
+    } else if (mistakesCounter > 13) {
         endGame('Player One Wins, The Spaceman is Gone');
     }
 } 
@@ -102,6 +104,8 @@ let checkingFunction = () => {
     
     let enteredLetter = document.querySelector(".p2-input-box").value.toLowerCase();
         if (globalLettersArray.includes(enteredLetter)){
+            console.log(enteredLetter);
+            console.log('secret letters =', secretLetters)
             let index = globalLettersArray.indexOf(enteredLetter);
 // https://stackoverflow.com/questions/20798477/how-to-find-index-of-all-occurrences-of-element-in-array
                 let getAllMatchingLetters = (array, letter) => {
@@ -114,7 +118,7 @@ let checkingFunction = () => {
                 }
                  getAllMatchingLetters(globalLettersArray, enteredLetter);
                 for( let i=0; i< indexes.length; i++) {
-                    secretBoxes[indexes[i]].style.color = 'white';
+                    secretLetters[indexes[i]].style.color = 'white';
                     checkEnd();
                 }  
         } else {
@@ -123,7 +127,7 @@ let checkingFunction = () => {
             document.querySelector(".wrong-letters").append(enteredLetter, ", ");
             checkEnd();
         }
-        document.querySelector(".p2-input-box").value = '';  
+    document.querySelector(".p2-input-box").value = '';  
 }
 
 const playAgainFunction = () => {
