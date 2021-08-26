@@ -12,7 +12,8 @@ This game is built using basic HTML, Javascript was used to dynamically interact
 
 ## Future Modification
 
-in the future, working on adding some more animations and sound effects will be a good thing to do which will give the player more engaged experience and more fun.
+* in the future, working on adding some more animations and sound effects will be a good thing to do which will give the player more engaged experience and more fun.
+* adding players scores and timers will add some challenging motivation to the game.
 
 -------
 ## Enjoy :)
