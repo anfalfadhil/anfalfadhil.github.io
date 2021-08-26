@@ -4,7 +4,7 @@ Spaceman is a version of the well known game (hang man), in this game player one
 
 ## Simple wire fram for the game
 
-Format: ![wire frame](wire frame.png)
+![wire frame](wire%20frame.png)
 
 ## technology used
 this game is bulit using basic HTML, javascript was used to dynamically interact with the HTML in manipulating DOM elements, building functions and using event listeners. CSS was used to layout the DOM elements on the page and styling them. 
