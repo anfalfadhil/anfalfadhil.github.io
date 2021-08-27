@@ -101,11 +101,8 @@ let checkEnd = () => {
 } 
 
 let checkingFunction = () => {
-    
     let enteredLetter = document.querySelector(".p2-input-box").value.toLowerCase();
         if (globalLettersArray.includes(enteredLetter)){
-            console.log(enteredLetter);
-            console.log('secret letters =', secretLetters)
             let index = globalLettersArray.indexOf(enteredLetter);
 // https://stackoverflow.com/questions/20798477/how-to-find-index-of-all-occurrences-of-element-in-array
                 let getAllMatchingLetters = (array, letter) => {
