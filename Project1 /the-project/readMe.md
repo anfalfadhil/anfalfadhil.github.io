@@ -16,6 +16,6 @@ This game is built using basic HTML, Javascript was used to dynamically interact
 * adding players scores and timers will add some challenging motivation to the game.
 
 ## play the game
-- [play the game](https://anfalfadhil.github.io/Project1/the-project/index.html)
+- [play the game](https://anfalfadhil.github.io/Project1%20/the-project/index.html)
 -------
 ## Enjoy :)
