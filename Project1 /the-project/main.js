@@ -132,6 +132,7 @@ let checkingFunction = () => {
 
 const playAgainFunction = () => {
     mistakesCounter = 0;
+    img.src = 'spaceship/empty.jpg';
     indexes = [];
     globalLettersArray = [];
     checkButton.display = true;
@@ -142,7 +143,6 @@ const playAgainFunction = () => {
     checkButton.onclick = checkingFunction;
     document.querySelector(".boxes").innerHTML = '';
     document.querySelector(".wrong-letters").innerHTML = '';
- 
 }
 
 checkButton.onclick = checkingFunction;
