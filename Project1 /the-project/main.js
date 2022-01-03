@@ -32,7 +32,7 @@ let img = document.createElement('img');
 document.querySelector("body > div:nth-child(2) > div.spaceship").append(img);
 img.src = 'spaceship/empty.jpg';
 img.setAttribute('class', 'img');
-
+let theWord ;
 let isInput = true;
 const checkInput = () => {
    if (document.getElementById("input-box").value === '' ){
@@ -42,10 +42,13 @@ const checkInput = () => {
         appendFuction;
     }
 }
+
+
 let secretLetters = [];
 const appendFuction = () => {
     checkInput();
     let enteredWord = document.getElementById("input-box").value.toLowerCase();
+    theWord = enteredWord;
     let lettersArray = enteredWord.split('');
     globalLettersArray= lettersArray;
     console.log(lettersArray)
@@ -94,9 +97,9 @@ let endGame = (str) => {
 
 let checkEnd = () => {
     if ( globalLettersArray.every(element => revealedLetters.includes(element))) {
-        endGame('Player Two Wins, The Spaceman is Safe');
+        endGame('Player Two Wins, The Spaceman is Safe. the word was "' + theWord +'"');
     } else if (mistakesCounter > 13) {
-        endGame('Player One Wins, The Spaceman is Gone');
+        endGame('Player One Wins, The Spaceman is Gone. the word was "' + theWord + '"');
     }
 } 
 
