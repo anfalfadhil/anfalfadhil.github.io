@@ -35,7 +35,7 @@ body {
 }
 
   .first-container {
-      background-image: url('spaceship/empty.jpg');
+      /*background-image: url('spaceship/empty.jpg'); */
       background-size: cover;
       background-color: rgb(120, 32, 243);
       width: 100%;
