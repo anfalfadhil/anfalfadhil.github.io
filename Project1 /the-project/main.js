@@ -32,7 +32,7 @@ let img = document.createElement('img');
 document.querySelector("body > div:nth-child(2) > div.spaceship").append(img);
 img.src = 'spaceship/empty.jpg';
 img.setAttribute('class', 'img');
-let theWord ;
+let theWord;
 let isInput = true;
 const checkInput = () => {
    if (document.getElementById("input-box").value === '' ){
@@ -49,6 +49,7 @@ const appendFuction = () => {
     checkInput();
     let enteredWord = document.getElementById("input-box").value.toLowerCase();
     theWord = enteredWord;
+    
     let lettersArray = enteredWord.split('');
     globalLettersArray= lettersArray;
     console.log(lettersArray)
@@ -61,9 +62,7 @@ const appendFuction = () => {
         document.querySelector(".boxes").append(box);
         box.setAttribute('id', 'secret-letter');
         box.innerText = lettersArray[i];
-        secretLetters.push(box);
-      
-        
+        secretLetters.push(box);   
     } 
 } 
 
@@ -80,7 +79,13 @@ let result = document.createElement('h1');
 result.setAttribute('class', 'result');
 document.querySelector(".third-container").append(result);
 
+
+
+
+
+
 let endGame = (str) => {
+    console.log("theWord is: " +theWord);
     mistakesCounter = 0;
     indexes = [];
     globalLettersArray = [];
@@ -93,13 +98,22 @@ let endGame = (str) => {
     document.querySelector(".wrong-letters").innerHTML = '';
     document.querySelector('.p2-input-box').innerHTML = '';
     document.querySelector('.boxes').innerHTML = '';
+    
 }
 
+let word1 = document.createElement('h1');
+word1.setAttribute('id', 'word1');
+document.querySelector(".third-container").append(word1);
+
 let checkEnd = () => {
+    
+    word1.innerHTML = 'the word was: ' + theWord;
+   
+    
     if ( globalLettersArray.every(element => revealedLetters.includes(element))) {
-        endGame('the word was "' + theWord +'"' + 'Player Two Wins, The Spaceman is Safe.' );
+        endGame( 'Player Two Wins, The Spaceman is Safe.' );
     } else if (mistakesCounter > 13) {
-        endGame(' the word was "' + theWord + '"' +'Player One Wins, The Spaceman is Gone.' );
+        endGame('Player One Wins, The Spaceman is Gone.' );
     }
 } 
 

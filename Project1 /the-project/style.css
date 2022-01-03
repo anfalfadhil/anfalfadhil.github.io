@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Rampart+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Oswald:wght@300&family=Rampart+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Irish+Grover&family=Roboto:ital,wght@1,300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Irish+Grover&family=Roboto:wght@900&display=swap');
 
 html, body {
     height: 100%;
-    margin: 0;
+    margin: auto;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 body {
     background-color: rgb(33, 53, 131);
@@ -21,36 +21,39 @@ body {
     height: 100px;
     padding: 15px;
     margin: 20px;
-    font-size: 100px;
+    font-size: 5rem;
     border-radius: 20px;
     background-color: rgb(210, 199, 250);
 
  }
 
 .enter-button {
-    height: 100px;
-    width: 150px;
+    height: 3rem;
+    width: 5rem;
     background-color: rgb(143, 55, 143);
-    font-size: 20px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin: 2rem;
 }
 
-  .first-container {
-      background-image: url('spaceship/empty.jpg'); 
-      background-size: cover;
-      background-color: rgb(120, 32, 243);
-      width: 100%;
-      height: 100%;
-      margin: auto;
-      position: fixed;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      background-position: center;
-	  z-index: 1;
-      font-family: 'Kaushan Script', cursive;
-   
-  }
+.first-container {
+    background-image: url('spaceship/empty.jpg'); 
+    background-size: cover;
+    background-color: rgb(120, 32, 243);
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-position: center;
+    z-index: 1;
+
+
+}
 
  .second-container {
     background-image: url('spaceship/empty.jpg');
@@ -141,29 +144,29 @@ body {
 
  .p2-input-box {
      height: 40%;
-     width: 40%;
+     width: 50%;
      background-color: salmon;
      position: relative;
-     top:55px;
-     left: 80px;
+     margin: auto;
+     margin-top: 2rem;
      border-radius: 30px;
      font-size: 50px;
      text-align: center;
-     
-
  }
+
  .p2-button {
     position: absolute;
     height:150px;
     width:250px;
     top:150px;
-    left:250px;
+    left:10rem;
     border-radius: 30px;
-    font-size: 20px;
+    font-size: 1.5rem;
     cursor: pointer;
-    height: 30%;
-    width: 40%;
+    height: 20%;
+    width: 30%;
     text-align: center;
+    margin: 2rem;
     background-color:rgb(238, 133, 168);
  
  }
@@ -180,14 +183,16 @@ body {
      margin: auto;
  }
  .container1-h1 {
-    margin: 10px;
+    margin-left: -50%;
+    margin-top: 8rem;
     text-align: center;
-    font-size: 60px;
+    font-size: 4rem;
+    width: 40vw;
  }
 
  .third-container {
-     height: 800px;
-     width: 1000px;
+     height: 70vh;
+     width: 70vw;
      border: 2px solid black;
      border-radius: 50px;
      background-color: rgb(184, 209, 92);
@@ -203,22 +208,38 @@ body {
 
  .result {
      color: black;
-     font-size: 100px;
+     font-size: 4rem;
      text-align: center;
      margin: auto;
      position: relative;
+     top: 5rem;
  }
  .replay-button {
-     height: 100px;
-     width: 150px;
+     height: 5rem;
+     width: 10rem;
      border: 1px solid black;
      border-radius: 10px;
-     position: relative;
-     top: 550px;
-     left: 400px;
+     position: absolute;
+     bottom: 2rem;
+     right: 2rem;
      cursor: pointer;
      background-color: rgb(30, 37, 142);
      color:rgb(171, 211, 28);
-     font-size: 30px;
+     font-size: 1.5rem;
      box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+ }
+
+ #spaceman {
+    background-color: transparent;	
+    background-image: none !important;
+    background-size: 0 !important;
+    border-radius: 5px;
+    height: 500px;
+ }
+
+ #word1 {
+     font-size: 5rem;
+     margin: 4rem;
+     padding: 7rem;
+     color: rgb(59, 177, 251);
  }
