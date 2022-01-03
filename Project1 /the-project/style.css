@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Rampart+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Oswald:wght@300&family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Irish+Grover&family=Roboto:ital,wght@1,300&display=swap');
 
 html, body {
     height: 100%;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 body {
     background-color: rgb(33, 53, 131);
     min-height: 100vh;
     width: 100%;
-
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -19,7 +21,6 @@ body {
     height: 100px;
     padding: 15px;
     margin: 20px;
-    /* display: flex; */
     font-size: 100px;
     border-radius: 20px;
     background-color: rgb(210, 199, 250);
@@ -30,7 +31,6 @@ body {
     height: 100px;
     width: 150px;
     background-color: rgb(143, 55, 143);
-    font-family: 'Kaushan Script', cursive;
     font-size: 20px;
 }
 
@@ -53,14 +53,11 @@ body {
   }
 
  .second-container {
-     /* background-color:rgb(30, 155, 204); */
     background-image: url('spaceship/empty.jpg');
     background-size: cover;
-
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 2fr;
-
     visibility: hidden;
     position: fixed;
     top: 0;
@@ -75,13 +72,11 @@ body {
  }
  
  #secret-letter {
-     /* visibility: hidden; */
 
     display: inline-block;
     height:60px;
     width:60px;
     margin: 5px;
-    font-family: 'Kaushan Script', cursive;
     font-size: 40px;
     text-align: center;
     border-radius: 10px;
@@ -103,7 +98,6 @@ body {
  .boxes {
     background-color: aqua;
     position: relative;
-    font-family: 'Kaushan Script', cursive;
     display: inline;
     font-size: 5px;
     text-align: center;
@@ -116,7 +110,6 @@ body {
     background-color: aqua;
     position: relative;
     top: 10px;
-    font-family: 'Kaushan Script', cursive;
    font-size: 20px;
    text-align: center;
    border-radius: 50px; 
@@ -125,7 +118,6 @@ body {
 }
  .wrong-letters-container {
      background-color:rgb(166, 129, 224);
-     font-family: 'Kaushan Script', cursive;
     font-size: 35px;
     text-align: center;
     border-radius: 50px;
@@ -155,7 +147,6 @@ body {
      top:55px;
      left: 80px;
      border-radius: 30px;
-     font-family: 'Kaushan Script', cursive;
      font-size: 50px;
      text-align: center;
      
@@ -168,7 +159,6 @@ body {
     top:150px;
     left:250px;
     border-radius: 30px;
-    font-family: 'Kaushan Script', cursive;
     font-size: 20px;
     cursor: pointer;
     height: 30%;
@@ -182,7 +172,6 @@ body {
      width:20%;
      margin: auto;
      text-align: center;
-     font-family: 'Oswald', sans-serif;
      font-size: 30px;
      position: relative;
  }
@@ -192,14 +181,8 @@ body {
  }
  .container1-h1 {
     margin: 10px;
-    /* height: 200px;
-    width: 300px; */
     text-align: center;
-    font-family: 'Kaushan Script', cursive;
     font-size: 60px;
-    /* position: fixed; */
-    /* top: 300px;
-    left: 1000px; */
  }
 
  .third-container {
@@ -221,7 +204,6 @@ body {
  .result {
      color: black;
      font-size: 100px;
-     font-family: 'Kaushan Script', cursive;
      text-align: center;
      margin: auto;
      position: relative;

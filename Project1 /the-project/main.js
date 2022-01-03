@@ -97,9 +97,9 @@ let endGame = (str) => {
 
 let checkEnd = () => {
     if ( globalLettersArray.every(element => revealedLetters.includes(element))) {
-        endGame('Player Two Wins, The Spaceman is Safe. the word was "' + theWord +'"');
+        endGame('the word was "' + theWord +'"' + 'Player Two Wins, The Spaceman is Safe.' );
     } else if (mistakesCounter > 13) {
-        endGame('Player One Wins, The Spaceman is Gone. the word was "' + theWord + '"');
+        endGame(' the word was "' + theWord + '"' +'Player One Wins, The Spaceman is Gone.' );
     }
 } 
 
